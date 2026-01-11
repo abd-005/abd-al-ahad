@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaCode, FaLaptopCode, FaRocket, FaEnvelope } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -23,38 +24,72 @@ const About = () => {
         About Me
       </motion.h2>
 
-      {/* Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-4xl grid md:grid-cols-2 gap-8"
-      >
-        {/* Journey */}
-        <div className="card bg-base-200/40 backdrop-blur-xl shadow-xl border border-white/10 p-6">
-          <h3 className="text-xl font-semibold text-secondary mb-4">
-            My Journey
-          </h3>
-          <p className="text-gray-300 leading-relaxed">
-            I started my programming journey exploring web technologies and
-            quickly fell in love with building interactive applications. Over
-            time, I mastered the MERN stack and now specialize in creating
-            scalable, responsive solutions.
-          </p>
-        </div>
-
-        {/* Interests */}
-        <div className="card bg-base-200/40 backdrop-blur-xl shadow-xl border border-white/10 p-6">
-          <h3 className="text-xl font-semibold text-secondary mb-4">
-            Beyond Coding
-          </h3>
-          <p className="text-gray-300 leading-relaxed">
-            Outside of programming, I enjoy sports, creative design, and
-            exploring new technologies. These hobbies fuel my creativity and
-            help me bring fresh perspectives into my work.
-          </p>
-        </div>
-      </motion.div>
+      {/* Content Grid */}
+      <div className="max-w-5xl grid md:grid-cols-2 gap-8">
+        {[
+          {
+            title: "My Journey",
+            icon: <FaLaptopCode className="mr-2 text-primary" />,
+            content:
+              "I’m a passionate and dedicated Computer Science & Engineering student at Uttara University and a MERN Stack Full Stack Developer, focused on building modern, scalable, and efficient web applications.",
+          },
+          {
+            title: "Technical Expertise",
+            icon: <FaCode className="mr-2 text-primary" />,
+            content: (
+              <ul className="list-disc list-inside space-y-1">
+                <li>Frontend: JavaScript (ES6+), React.js, HTML5, CSS3, Tailwind CSS</li>
+                <li>Backend: Node.js, Express.js, REST APIs</li>
+                <li>Database: MongoDB</li>
+                <li>Languages: C, C++, Java, Python</li>
+                <li>Exploring: Next.js, AI & Machine Learning fundamentals</li>
+              </ul>
+            ),
+          },
+          {
+            title: "What I Do",
+            icon: <FaRocket className="mr-2 text-primary" />,
+            content: (
+              <ul className="list-disc list-inside space-y-1">
+                <li>Build full-stack web applications using the MERN stack</li>
+                <li>Write clean, maintainable, and scalable code</li>
+                <li>Learn by building real-world projects and collaborating</li>
+                <li>Stay updated with modern web development trends</li>
+              </ul>
+            ),
+          },
+          {
+            title: "Goals & Opportunities",
+            icon: <FaEnvelope className="mr-2 text-primary" />,
+            content: (
+              <>
+                <p className="mb-4">
+                  I’m open to internships, entry-level roles, collaborations, and learning opportunities where I can grow as a developer and contribute to meaningful, impactful projects.
+                </p>
+                <p>
+                  <span className="font-semibold text-primary">Email:</span> abd.me7@gmail.com
+                </p>
+              </>
+            ),
+          },
+        ].map((card, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: i * 0.2 }}
+            className="group card bg-base-200/40 backdrop-blur-xl shadow-xl border border-white/10 p-6 
+                       transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-secondary"
+          >
+            <h3 className="flex items-center text-xl font-semibold text-secondary mb-4 group-hover:text-primary transition-colors">
+              {card.icon} {card.title}
+            </h3>
+            <div className="text-gray-300 leading-relaxed group-hover:text-white transition-colors">
+              {card.content}
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 };
