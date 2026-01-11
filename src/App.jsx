@@ -5,6 +5,7 @@ import About from "./components/About/About.jsx";
 import Footer from "./components/layout/Footer.jsx";
 import Skills from "./components/skills/Skills.jsx";
 import Education from "./components/education/Education.jsx";
+import Experience from "./components/experience/Experience.jsx";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <About/>
         <Skills/>
         <Education/>
+        <Experience/>
         <section id="projects" className="min-h-[60vh] text-white">Projects</section>
         <section id="contact" className="min-h-[60vh] text-white">Contact</section>
       </main>
