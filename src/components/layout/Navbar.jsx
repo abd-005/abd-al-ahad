@@ -18,9 +18,9 @@ const Navbar = () => {
       <div className="flex-1">
         <a
           href="#home"
-          className="btn btn-ghost normal-case text-xl text-primary font-bold"
+          className="btn btn-ghost hover:border-none hover:outline-none normal-case text-xl text-primary font-bold"
         >
-          Hi! I'm Md. Abdul Ahad
+          abd.dev
         </a>
       </div>
 

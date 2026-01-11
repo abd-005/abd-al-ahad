@@ -14,9 +14,9 @@ html {
   default: true;
   prefersdark: true;
   color-scheme: dark;
-  --color-text:#fff;
-  --color-primary: #00D8FF;
-  --color-secondary: #7C4DFF;
+  --color-text: #fff;
+  --color-primary: #00d8ff;
+  --color-secondary: #7c4dff;
   --color-accent: #22d3ee;
   --color-neutral: #1f2937;
   --color-base-100: #0f1220;
@@ -26,4 +26,9 @@ html {
   --color-success: #22c55e;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
+}
+
+body {
+  @apply bg-base-100 text-white;
+  font-family: "Inter", system-ui, sans-serif;
 }

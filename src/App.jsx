@@ -1,12 +1,13 @@
 import React from "react";
 import Navbar from "./components/layout/Navbar.jsx";
+import Home from "./components/layout/Home/Home.jsx";
 
 export default function App() {
   return (
     <div data-theme="mytheme">
       <Navbar />
       <main className="max-w-6xl mx-auto px-4">
-        <section id="home" className="min-h-[60vh] text-white pt-24">Home</section>
+        <Home/>
         <section id="about" className="min-h-[60vh] text-white">About</section>
         <section id="skills" className="min-h-[60vh] text-white">Skills</section>
         <section id="projects" className="min-h-[60vh] text-white">Projects</section>
