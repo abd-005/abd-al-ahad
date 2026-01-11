@@ -1,0 +1,66 @@
+mern-portfolio/
+├─ client/                      # React (Vite or CRA)
+│  ├─ public/
+│  │  └─ favicon.svg
+│  ├─ src/
+│  │  ├─ assets/               # images, svgs, icons
+│  │  │  ├─ logos/
+│  │  │  └─ portraits/
+│  │  ├─ components/
+│  │  │  ├─ common/            # shared UI primitives
+│  │  │  │  ├─ Button.jsx
+│  │  │  │  ├─ Section.jsx
+│  │  │  │  └─ Container.jsx
+│  │  │  ├─ layout/
+│  │  │  │  ├─ Navbar.jsx
+│  │  │  │  └─ Footer.jsx
+│  │  │  ├─ hero/
+│  │  │  │  └─ Hero.jsx
+│  │  │  ├─ about/
+│  │  │  │  └─ About.jsx
+│  │  │  ├─ skills/
+│  │  │  │  └─ Skills.jsx
+│  │  │  ├─ education/
+│  │  │  │  └─ Education.jsx
+│  │  │  ├─ experience/
+│  │  │  │  └─ Experience.jsx
+│  │  │  ├─ projects/
+│  │  │  │  ├─ Projects.jsx
+│  │  │  │  └─ ProjectDetail.jsx
+│  │  │  └─ contact/
+│  │  │     └─ Contact.jsx
+│  │  ├─ data/                 # JSON/data models for projects, skills
+│  │  │  ├─ projects.js
+│  │  │  └─ skills.js
+│  │  ├─ hooks/
+│  │  │  └─ useScrollLock.js
+│  │  ├─ lib/
+│  │  │  └─ analytics.js
+│  │  ├─ styles/
+│  │  │  ├─ index.css          # Tailwind base + DaisyUI
+│  │  │  └─ theme.css          # optional custom tokens
+│  │  ├─ App.jsx
+│  │  └─ main.jsx
+│  ├─ index.html
+│  ├─ tailwind.config.js
+│  ├─ postcss.config.js
+│  └─ package.json
+│
+├─ server/                     # Node/Express API (contact form, project data)
+│  ├─ src/
+│  │  ├─ config/
+│  │  │  └─ env.js
+│  │  ├─ routes/
+│  │  │  └─ contact.routes.js
+│  │  ├─ controllers/
+│  │  │  └─ contact.controller.js
+│  │  ├─ services/
+│  │  │  └─ mail.service.js
+│  │  └─ server.js
+│  ├─ package.json
+│  └─ .env
+│
+├─ shared/                     # shared types/constants if needed
+│  └─ constants.js
+├─ README.md
+└─ .gitignore
