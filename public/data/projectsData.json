@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "name": "Garments Order Production Tracker System",
+    "image": "/projectsImg/tailorflow.png",
+    "live": "https://tailorflow-f0731.web.app/",
+    "github": "https://github.com/abd-005/Garments-Order-Production-Tracker-System-Frontend",
+    "stack": [
+      "React",
+      "TailwindCSS",
+      "Firebase",
+      "Node.js"
+    ],
+    "description": "A system to track garment orders and production workflow, designed for efficiency in the textile industry.",
+    "challenges": "Managing complex order states and ensuring real-time updates across multiple users.",
+    "improvements": "Add AI-driven analytics for production forecasting and integrate with ERP systems."
+  },
+  {
+    "id": 1,
+    "name": "Book Library",
+    "image": "/projectsImg/booklibrary.png",
+    "live": "https://the-book-heaven-abd-007.netlify.app/",
+    "github": "https://github.com/abd-005/Book-Library-Client",
+    "stack": [
+      "React",
+      "React Router",
+      "TailwindCSS",
+      "MongoDB"
+    ],
+    "description": "A digital library platform where users can browse, borrow, and manage books online.",
+    "challenges": "Implementing secure authentication and handling dynamic book categories.",
+    "improvements": "Introduce personalized recommendations and collaborative reading lists."
+  },
+  {
+    "id": 2,
+    "name": "Toy Topia",
+    "image": "/projectsImg/toytopia.png",
+    "live": "https://toy-topia-abd007.netlify.app/",
+    "github": "https://github.com/abd-005/Toy-Topia",
+    "stack": [
+      "React",
+      "TailwindCSS",
+      "Firebase",
+      "Express.js"
+    ],
+    "description": "An e-commerce platform for toys, featuring product listings, authentication, and order management.",
+    "challenges": "Optimizing performance for large product catalogs and ensuring smooth checkout flow.",
+    "improvements": "Add AR-based toy previews and advanced search filters."
+  }
+]
