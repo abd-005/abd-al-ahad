@@ -14,8 +14,8 @@ mern-portfolio/
 │  │  │  ├─ layout/
 │  │  │  │  ├─ Navbar.jsx
 │  │  │  │  └─ Footer.jsx
-│  │  │  ├─ hero/
-│  │  │  │  └─ Hero.jsx
+│  │  │  ├─ home/
+│  │  │  │  └─ Home.jsx
 │  │  │  ├─ about/
 │  │  │  │  └─ About.jsx
 │  │  │  ├─ skills/
