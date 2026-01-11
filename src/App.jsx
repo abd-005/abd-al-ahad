@@ -7,6 +7,7 @@ import Skills from "./components/skills/Skills.jsx";
 import Education from "./components/education/Education.jsx";
 import Experience from "./components/experience/Experience.jsx";
 import Projects from "./components/projects/Projects.jsx";
+import Contact from "./components/contact/Contact.jsx";
 
 export default function App() {
   return (
@@ -19,7 +20,7 @@ export default function App() {
         <Education/>
         <Experience/>
         <Projects/>
-        <section id="contact" className="min-h-[60vh] text-white">Contact</section>
+        <Contact/>
       </main>
       <Footer/>
     </div>

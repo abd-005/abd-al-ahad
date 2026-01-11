@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import projects from "../../../public/data/projectsData";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/projectsData.json")
+      .then((res) => res.json())
+      .then((data) => setProjects(data));
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -17,12 +24,15 @@ const Projects = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   return (
-    <section id="projects" className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-24 bg-base-100 overflow-hidden">
+    <section
+      id="projects"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-16 py-24 bg-base-100 overflow-hidden"
+    >
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -65,13 +75,16 @@ const Projects = () => {
 
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.stack.slice(0, 3).map((tech, index) => (
-                  <span key={index} className="text-[10px] uppercase tracking-wider bg-primary/10 text-primary px-2 py-1 rounded">
+                  <span
+                    key={index}
+                    className="text-[10px] uppercase tracking-wider bg-primary/10 text-primary px-2 py-1 rounded"
+                  >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className="">
+              <div>
                 <Link
                   to={`/projects/${project.id}`}
                   className="btn btn-primary btn-block hover:btn-secondary transition-all transform active:scale-95 w-6/12"
