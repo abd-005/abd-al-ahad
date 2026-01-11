@@ -3,6 +3,7 @@ import Navbar from "./components/layout/Navbar.jsx";
 import Home from "./components/Home/Home.jsx";
 import About from "./components/About/About.jsx";
 import Footer from "./components/layout/Footer.jsx";
+import Skills from "./components/skills/Skills.jsx";
 
 export default function App() {
   return (
@@ -11,7 +12,7 @@ export default function App() {
       <main className="max-w-6xl mx-auto px-4">
         <Home/>
         <About/>
-        <section id="skills" className="min-h-[60vh] text-white">Skills</section>
+        <Skills/>
         <section id="projects" className="min-h-[60vh] text-white">Projects</section>
         <section id="contact" className="min-h-[60vh] text-white">Contact</section>
       </main>
