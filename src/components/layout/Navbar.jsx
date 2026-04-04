@@ -1,100 +1,103 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { FaSun, FaMoon, FaAccusoft } from "react-icons/fa6";
+import Logo from "../../../public/Logo";
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
+const Navbar = ({ theme, setTheme }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", path: "#home" },
+    { name: "About", path: "#about" },
+    { name: "Skills", path: "#skills" },
+    { name: "Education", path: "#education" },
+    { name: "Experience", path: "#experience" },
+    { name: "Projects", path: "#projects" },
+    { name: "Contact", path: "#contact" },
   ];
 
+  const toggleTheme = () => {
+    setTheme(theme === "dark_tech" ? "light_tech" : "dark_tech");
+  };
+
   return (
-    <div className="navbar bg-base-100 fixed top-0 z-50 shadow-md">
-      {/* Brand */}
-      <div className="flex-1">
+    <motion.nav
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="fixed top-0 left-0 w-full z-50 bg-base-100/80 backdrop-blur-xl shadow-lg"
+    >
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
+        {/* Logo */}
+        {/* <FaAccusoft size={24} className="drop-shadow-[0_0_8px_rgba(0,216,255,0.8)]" /> */}
         <a
           href="#home"
-          className="btn btn-ghost hover:border-none hover:outline-none normal-case text-xl text-primary font-bold"
+          className="text-2xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
         >
-          abd.dev
+          abd-005
         </a>
-      </div>
 
-      {/* Desktop Links */}
-      <div className="hidden md:flex gap-2">
-        {navLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-            className="btn btn-ghost text-white hover:text-secondary transition-colors"
-          >
-            {link.name}
-          </a>
-        ))}
-      </div>
+        {/* Desktop Links */}
+        <div className="hidden md:flex gap-8 items-center">
+          {navLinks.map((link, i) => (
+            <a
+              key={i}
+              href={link.path}
+              className="text-base font-medium text-gray-300 hover:text-primary transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
 
-      {/* Mobile Hamburger */}
-      <div className="md:hidden">
-        <button
-          className="btn btn-ghost"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-        >
-          {/* Hamburger / Close icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-primary"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="ml-4 p-2 rounded-full bg-base-200 hover:bg-base-300 transition-colors"
           >
-            {open ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+            {theme === "dark_tech" ? (
+              <FaSun className="text-yellow-400 text-xl" />
             ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <FaMoon className="text-secondary text-xl" />
             )}
-          </svg>
+          </button>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-gray-300 hover:text-primary transition-colors"
+        >
+          ☰
         </button>
       </div>
 
-      {/* Mobile Menu with Framer Motion */}
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="absolute top-16 left-0 w-full bg-base-200 shadow-lg flex flex-col items-center gap-2 py-4 md:hidden"
+      {/* Mobile Dropdown */}
+      {isOpen && (
+        <div className="md:hidden bg-base-200/90 backdrop-blur-xl shadow-lg px-6 py-4 space-y-4">
+          {navLinks.map((link, i) => (
+            <a
+              key={i}
+              href={link.path}
+              onClick={() => setIsOpen(false)}
+              className="block text-base font-medium text-gray-300 hover:text-primary transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+          {/* Theme Toggle in Mobile */}
+          <button
+            onClick={toggleTheme}
+            className="mt-4 p-2 rounded-full bg-base-200 hover:bg-base-300 transition-colors"
           >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="btn btn-ghost w-3/4 text-white hover:text-secondary transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+            {theme === "dark_tech" ? (
+              <FaSun className="text-yellow-400 text-xl" />
+            ) : (
+              <FaMoon className="text-secondary text-xl" />
+            )}
+          </button>
+        </div>
+      )}
+    </motion.nav>
   );
 };
 

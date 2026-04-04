@@ -57,7 +57,7 @@ const SocialLinks = ({ className = "" }) => {
           aria-label={s.name}
           whileHover={{ scale: 1.06, y: -2 }}
           whileTap={{ scale: 0.98 }}
-          className="btn btn-ghost text-white border border-white/10 hover:border-secondary hover:text-secondary transition-colors"
+          className="btn btn-ghost text-white border border-white/10 rounded-xl hover:border-secondary hover:text-secondary transition-colors"
         >
           <span className="text-primary">{s.icon}</span>
           <span className="ml-2">{s.name}</span>

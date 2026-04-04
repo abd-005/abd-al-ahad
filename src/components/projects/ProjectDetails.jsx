@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaArrowLeft } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
+import { FiExternalLink } from "react-icons/fi";
+import TechButton from "../UI/TechButton";
+import TechCursor from "../UI/TechCursor";
 
 const ProjectDetails = () => {
   const [projects, setProjects] = useState([]);
@@ -19,25 +22,27 @@ const ProjectDetails = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-base-100">
         <h2 className="text-2xl font-bold">Project not found</h2>
-        <Link to="/projects" className="btn btn-primary mt-4">
-          Back to Projects
+        <Link to="/" className="btn btn-primary mt-4">
+          Back to Home
         </Link>
       </div>
     );
   }
 
   return (
+
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className="px-6 md:px-16 py-24 bg-base-100 min-h-screen"
     >
+      <TechCursor />
       <div className="max-w-5xl mx-auto">
         <Link
-          to="/projects"
+          to="/"
           className="inline-flex items-center gap-2 text-primary hover:underline mb-8 transition-all"
         >
-          <FaArrowLeft /> Back to Projects
+          <FaArrowLeft /> Back to Home
         </Link>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -102,17 +107,25 @@ const ProjectDetails = () => {
                 href={project.live}
                 target="_blank"
                 rel="noreferrer"
-                className="btn btn-primary flex-1 gap-2"
+                className="flex-1 gap-2"
               >
-                <FaExternalLinkAlt /> Live Demo
+                <TechButton
+                  variant="primary"
+                  text="Live Demo"
+                  icon={FiExternalLink}
+                />
               </a>
               <a
                 href={project.github}
                 target="_blank"
                 rel="noreferrer"
-                className="btn btn-outline btn-primary flex-1 gap-2"
+                className="btn-outline flex-1 gap-2"
               >
-                <FaGithub /> GitHub
+                <TechButton
+                  variant="secondary"
+                  text="GitHub"
+                  icon={FaGithub}
+                />
               </a>
             </div>
           </motion.div>

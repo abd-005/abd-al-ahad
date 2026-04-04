@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import TechButton from "../UI/TechButton";
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -84,13 +85,12 @@ const Projects = () => {
                 ))}
               </div>
 
-              <div>
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="btn btn-primary btn-block hover:btn-secondary transition-all transform active:scale-95 w-6/12"
-                >
-                  View Details
-                </Link>
+              <div className="">
+                  <TechButton
+                    variant="secondary"
+                    text="View Details"
+                    to={`/projects/${project.id}`}
+                  ></TechButton>
               </div>
             </div>
           </motion.div>

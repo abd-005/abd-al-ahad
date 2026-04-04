@@ -9,7 +9,7 @@ import ProjectDetails from "./components/projects/ProjectDetails.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
+    element: <App/>,
     loader: () => fetch('/projectsData.json'),
   },
   {
@@ -24,5 +24,6 @@ const router = createBrowserRouter([
 const root = document.getElementById("root");
 
 ReactDOM.createRoot(root).render(
-  <RouterProvider router={router} />,
+  <RouterProvider router={router} >
+  </RouterProvider>,
 );

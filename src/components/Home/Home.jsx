@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import SocialLinks from '../common/SocialLinks';
+import { FiDownload, FiExternalLink } from "react-icons/fi";
+import TechButton from '../UI/TechButton';
 
 const Home = () => {
     return (
@@ -8,6 +10,7 @@ const Home = () => {
             id="home"
             className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-6 md:px-16 bg-base-100 pt-24"
         >
+            
             {/* Left: Text */}
             <motion.div
                 initial={{ opacity: 0, x: -40 }}
@@ -27,12 +30,22 @@ const Home = () => {
                 </p>
 
                 {/* Resume Button */}
+                
+  
+
+
                 <a
                     href="/Resume_Abdul_Ahad.pdf"
                     download
-                    className="btn btn-primary hover:btn-secondary transition-colors"
+                    className="hover:btn-secondary transition-colors"
                 >
-                    Download Resume
+  <TechButton 
+    variant="primary"
+    text="Download Resume" 
+    icon={FiDownload} 
+    onClick={() => console.log('Downloading...')} 
+  />
+                  
                 </a>
 
                 {/* Social Links */}
@@ -44,7 +57,7 @@ const Home = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="flex-1 flex justify-center"
+                className="flex-1 flex justify-center "
             >
                 <div className="avatar">
                     <div className="w-48 md:w-64 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-lg">

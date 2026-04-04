@@ -78,7 +78,7 @@ const About = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: i * 0.2 }}
-            className="group card bg-base-200/40 backdrop-blur-xl shadow-xl border border-white/10 p-6 
+            className="group card bg-base-200/40 backdrop-blur-xl shadow-xl border border-white/10 p-6 rounded-xl
                        transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-secondary"
           >
             <h3 className="flex items-center text-xl font-semibold text-secondary mb-4 group-hover:text-primary transition-colors">

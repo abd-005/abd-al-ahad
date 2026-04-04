@@ -6,14 +6,14 @@ html {
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  themes: mytheme --default --prefersdark, dark, light;
+  themes: dark_tech --default --prefersdark, dark, light_tech;
 }
 
 @plugin "daisyui/theme" {
-  name: "mytheme";
+  name: "dark_tech";
   default: true;
   prefersdark: true;
-  color-scheme: dark;
+  color-scheme: "dark";
   --color-text: #fff;
   --color-primary: #00d8ff;
   --color-secondary: #7c4dff;
@@ -28,7 +28,48 @@ html {
   --color-error: #ef4444;
 }
 
+@plugin "daisyui/theme" {
+  name: "light_tech";
+  
+  color-scheme: "light";
+  --color-primary: #0891b2;        /* Slightly darker Cyan */
+  --color-secondary: #7e22ce;      /* Slightly darker Purple */
+  --color-accent: #0d9488;         /* Deep Teal */
+  --color-neutral: #334155;
+  --color-base-100: #fff;       /* Pure White Background */
+  --color-base-200: #94949485;       /* Light Gray Sections */
+  --color-base-300: #e2e8f0;
+  --color-gray-200: #757;
+  --color-gray-400: #545454;
+  --color-gray-300: #353535;
+  --color-white: #000;
+  --color-base-content: #0f172a;   /* Deep Slate Text */
+}
+
 body {
-  @apply bg-base-100 text-white;
+  @apply  text-white;
   font-family: "Inter", system-ui, sans-serif;
+  cursor: none;
+}
+
+/* Ensure buttons and links also don't show the default pointer */
+a, button, .cursor-pointer {
+  cursor: none !important;
+}
+
+/* Fallback for mobile: show default cursor because custom ones feel laggy on touch */
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+}
+
+@keyframes border-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.animate-border-flow {
+  background-size: 200% 200%;
+  animation: border-flow 6s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite ;
 }
